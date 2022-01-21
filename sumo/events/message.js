@@ -1,7 +1,7 @@
 const { messageLog } = require('../constants/functions/log.js')
 const { infoLog } = require('../constants/functions/log.js')
 const { sleep } = require('../constants/functions/misc.js')
-const blacklisted_word = ['Mana']
+const blacklisted_word = ['Mana', 'unclaimed', 'view it', 'Reward', 'Coins', 'Experience', 'YOU WON!', 'You cannot say', '▬', 'Eliminate your', 'Click here to view them!', 'coins', 'connect you to that server', 'Melee', 'Karma', 'was killed by', '-', 'Sending you', 'This game has been', 'Opponent:', 'Sumo', 'has joined', 'The game', 'Mystery Box', 'WINNER!']
 let wins = 0
 let losses = 0
 
@@ -9,9 +9,7 @@ module.exports = {
   name: "message",
   async execute(message) {
 
-    for(const word of blacklisted_word) {
-      if(message.toString().includes(word)) return
-    }
+    if(message.toString().trim() === '' || message.toString().trim() === ' ') return
 
     const args = message.toString().trim().split(' ')
     if(args[0] === 'Opponent:') {
@@ -25,11 +23,10 @@ module.exports = {
     if(args[0] === 'Sumo' && args[1] === 'Duel' && args[2] === '-') {
       bot.enemy = null
       bot.moving = false
-      infoLog('Sumo ended.', 'SUMO')
       await sleep(1500)
       await bot.chat('gg')
       await sleep(1000)
-      await bot.chat('/l')
+      await bot.chat('/play duels_sumo_duel')
       infoLog(`Wins: ${wins}, Losses: ${losses}`, 'CURRENT STATS')
     }
     if(args[1] === 'WINNER!') {
@@ -41,7 +38,11 @@ module.exports = {
       losses++
       infoLog('Lost the round', 'SUMO')
     }
-    
-    messageLog(message.toString())
+
+    for(const word of blacklisted_word) {
+      if(message.toString().includes(word)) return
+    }
+
+    messageLog(message.toString().trim())
   }
 }

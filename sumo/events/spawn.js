@@ -13,22 +13,24 @@ module.exports = {
     }
 
     if(!firstStart) {
-      console.log({ IGN: bot.username })
+      //console.log({ IGN: bot.username })
+      await bot.chat('/play duels_sumo_duel')
       firstStart = true
     }
 
     await sleep(2500)
+    infoLog('Joined Sumo', 'SPAWN')
 
-    if(!inDuel) {
+    /*if(!inDuel) {
       await sleep(5000)
-      await bot.chat('/play duels_sumo_duel')
-      //await bot.chat('/duel tonioisback sumo')
+      //await bot.chat('/play duels_sumo_duel')
+      await bot.chat('/duel _itzunique sumo')
       infoLog('Joined Sumo', 'SPAWN')
       inDuel = true
       setTimeout(() => {
         inDuel = false
       }, 10000)
-    }
+    }*/
 
     bot.ghostblock = true
     bot.moving = false
