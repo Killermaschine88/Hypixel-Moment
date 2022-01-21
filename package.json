@@ -10,7 +10,11 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "colorette": "^2.0.16",
     "dotenv": "^14.2.0",
-    "mineflayer": "^3.14.1"
+    "mineflayer": "github:aesthetic0001/mineflayer#master",
+    "mineflayer-pathfinder": "^1.9.1",
+    "prismarine-viewer": "^1.21.0",
+    "vec3": "^0.1.7"
   }
 }
