@@ -12,6 +12,7 @@
   "dependencies": {
     "colorette": "^2.0.16",
     "dotenv": "^14.2.0",
+    "express": "^4.17.2",
     "mineflayer": "github:aesthetic0001/mineflayer#master",
     "mineflayer-pathfinder": "^1.9.1",
     "prismarine-viewer": "^1.21.0",

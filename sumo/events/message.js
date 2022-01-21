@@ -1,7 +1,7 @@
 const { messageLog } = require('../constants/functions/log.js')
 const { infoLog } = require('../constants/functions/log.js')
 const { sleep } = require('../constants/functions/misc.js')
-const blacklisted_word = ['Mana', 'unclaimed', 'view it', 'Reward', 'Coins', 'Experience', 'YOU WON!', 'You cannot say', '▬', 'Eliminate your', 'Click here to view them!', 'coins', 'connect you to that server', 'Melee', 'Karma', 'was killed by', '-', 'Sending you', 'This game has been', 'Opponent:', 'Sumo', 'has joined', 'The game', 'Mystery Box', 'WINNER!']
+const blacklisted_word = ['Mana', 'unclaimed', 'view it', 'Reward', 'Coins', 'Experience', 'YOU WON!', 'You cannot say', '▬', 'Eliminate your', 'Click here to view them!', 'coins', 'connect you to that server', 'Melee', 'Karma', 'was killed by', '-', 'Sending you', 'This game has been', 'Opponent:', 'Sumo', 'has joined', 'The game', 'Mystery Box', 'WINNER!', 'slid']
 let wins = 0
 let losses = 0
 
