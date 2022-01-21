@@ -9,7 +9,7 @@ module.exports = {
   name: "spawn",
   async execute() {
     if(bot.webviewer && !firstStart) {
-      mineflayerViewer(bot, { port: 3000, firstPerson: false, distance: 2 })
+      mineflayerViewer(bot, { port: 3000, firstPerson: false, distance: 1 })
     }
 
     if(!firstStart) {
@@ -20,13 +20,17 @@ module.exports = {
     await sleep(2500)
 
     if(!inDuel) {
+      await sleep(5000)
       //await bot.chat('/play duels_sumo_duel')
-      await bot.chat('/duel baltrazyt sumo')
+      await bot.chat('/duel tonioisback sumo')
       infoLog('Joined Sumo', 'SPAWN')
       inDuel = true
       setTimeout(() => {
         inDuel = false
       }, 10000)
     }
+
+    bot.ghostblock = true
+    bot.moving = false
   }
 }

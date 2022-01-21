@@ -12,7 +12,16 @@ global.bot = mineflayer.createBot({
   host: host,
   version: version,
   username: process.env.email,
-  password: process.env.password
+  password: process.env.password,
+  viewDistance: "tiny",
+  skinParts: {
+    showJacket: false,
+    showHat: false,
+    showRightPants: false,
+    showLeftPants: false,
+    showLeftSleeve: false,
+    showRightSleeve: false
+  },
 })
 
 //load plugins
