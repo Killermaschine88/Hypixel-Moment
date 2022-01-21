@@ -30,11 +30,10 @@ bot.loadPlugin(pathfinder)
 bot.webviewer = viewer === 'yes' ? true : false
 
 //some global values
-global.inSkyblock = false
 global.enemy = null
 
 //event handler
-const minecraftEventFiles = fs.readdirSync('./events').filter((file) => file.endsWith('.js'));
+const minecraftEventFiles = fs.readdirSync('./sumo/events').filter((file) => file.endsWith('.js'));
 
 for (const file of minecraftEventFiles) {
 	const event = require(`./events/${file}`);

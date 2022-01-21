@@ -3,7 +3,7 @@ const { infoLog } = require('../constants/functions/log.js')
 const { sleep } = require('../constants/functions/misc.js')
 const blacklisted_word = ['Mana']
 let wins = 0
-let loses = 0
+let losses = 0
 
 module.exports = {
   name: "message",
@@ -27,13 +27,10 @@ module.exports = {
       bot.moving = false
       infoLog('Sumo ended.', 'SUMO')
       await sleep(1500)
-      await bot.chat('/ac gg')
+      await bot.chat('gg')
       await sleep(1000)
       await bot.chat('/l')
-      console.log({
-        wisn: wins,
-        loses: loses
-      })
+      infoLog(`Wins: ${wins}, Losses: ${losses}`, 'CURRENT STATS')
     }
     if(args[1] === 'WINNER!') {
       wins++
@@ -41,7 +38,7 @@ module.exports = {
     }
 
     if(args[4] === 'WINNER!' || args[5] === 'WINNER!') {
-      loses++
+      losses++
       infoLog('Lost the round', 'SUMO')
     }
     
