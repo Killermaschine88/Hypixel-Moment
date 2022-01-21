@@ -82,9 +82,9 @@ function removeClientSided() {
 
 async function strafe(bot) {
   bot.setControlState("left", true)
-  await sleep(100)
+  await sleep(250)
   bot.setControlState("left", false)
   bot.setControlState("right", true)
-  await sleep(100)
+  await sleep(250)
   bot.setControlState("right", false)
 }

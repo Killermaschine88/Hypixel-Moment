@@ -2,6 +2,8 @@ const { messageLog } = require('../constants/functions/log.js')
 const { infoLog } = require('../constants/functions/log.js')
 const { sleep } = require('../constants/functions/misc.js')
 const blacklisted_word = ['Mana']
+let wins = 0
+let loses = 0
 
 module.exports = {
   name: "message",
@@ -28,12 +30,18 @@ module.exports = {
       await bot.chat('/ac gg')
       await sleep(1000)
       await bot.chat('/l')
+      console.log({
+        wisn: wins,
+        loses: loses
+      })
     }
     if(args[1] === 'WINNER!') {
+      wins++
       infoLog('Won the round', 'SUMO')
     }
 
     if(args[4] === 'WINNER!' || args[5] === 'WINNER!') {
+      loses++
       infoLog('Lost the round', 'SUMO')
     }
     

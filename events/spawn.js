@@ -21,8 +21,8 @@ module.exports = {
 
     if(!inDuel) {
       await sleep(5000)
-      //await bot.chat('/play duels_sumo_duel')
-      await bot.chat('/duel tonioisback sumo')
+      await bot.chat('/play duels_sumo_duel')
+      //await bot.chat('/duel tonioisback sumo')
       infoLog('Joined Sumo', 'SPAWN')
       inDuel = true
       setTimeout(() => {
